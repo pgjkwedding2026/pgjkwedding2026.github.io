@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#PriyaKiJit — Priyanka &amp; Satyajit — Decoding Indian Wedding Attire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --indigo:#1A1035;--indigo-mid:#2C1F5E;--gold:#C9922E;--gold-light:#E8B860;
+  --marigold:#E8821A;--blush:#F2C4CE;--ivory:#FDF6EC;--ivory-warm:#F5EBD8;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito Sans',sans-serif;background:var(--ivory);color:var(--indigo);overflow-x:hidden}
+
+
+
+/* LIGHTBOX */
+.lightbox-img{cursor:zoom-in}
+.lightbox-overlay{position:fixed;inset:0;background:rgba(10,6,20,0.92);z-index:1000;display:none;align-items:center;justify-content:center;padding:3vh 3vw;backdrop-filter:blur(4px)}
+.lightbox-overlay.open{display:flex}
+.lightbox-overlay img{max-width:100%;max-height:94vh;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,0.5)}
+.lightbox-close{position:absolute;top:22px;right:32px;font-size:2.2rem;color:var(--ivory);background:none;border:none;cursor:pointer;line-height:1;opacity:0.8;transition:opacity 0.2s}
+.lightbox-close:hover{opacity:1}
+
+
+/* CONCIERGE */
+.concierge-banner{max-width:1100px;margin:0 auto 3rem;background:linear-gradient(135deg,rgba(201,146,46,0.08),rgba(201,146,46,0.03));border:1px solid rgba(201,146,46,0.28);border-radius:20px;padding:2.4rem 2.4rem 2rem;position:relative;overflow:hidden}
+.concierge-banner::before{content:"✦";position:absolute;right:2rem;top:1rem;font-size:4rem;opacity:0.07;color:var(--gold)}
+.concierge-eyebrow{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem}
+.concierge-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--indigo);margin-bottom:0.7rem;line-height:1.2}
+.concierge-desc{font-size:0.85rem;color:rgba(26,16,53,0.7);line-height:1.75;max-width:760px;margin-bottom:2rem}
+.advisor-row{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-bottom:2rem}
+@media(max-width:600px){.advisor-row{grid-template-columns:1fr}}
+.advisor-card{background:white;border:1px solid rgba(201,146,46,0.2);border-radius:14px;padding:1.4rem;display:flex;gap:1.2rem;align-items:flex-start;box-shadow:0 4px 15px rgba(26,16,53,0.03)}
+.advisor-photo{width:80px;height:80px;border-radius:50%;object-fit:cover;border:2px solid rgba(201,146,46,0.45);flex-shrink:0}
+.advisor-photo-placeholder{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,rgba(201,146,46,0.1),rgba(201,146,46,0.05));border:2px solid rgba(201,146,46,0.45);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.8rem}
+.advisor-info{}
+.advisor-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--indigo);margin-bottom:0.25rem}
+.advisor-role{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem}
+.advisor-contact{font-size:0.78rem;color:rgba(26,16,53,0.65);line-height:1.8}
+.advisor-contact a{color:var(--gold);text-decoration:none}
+.advisor-contact a:hover{text-decoration:underline}
+
+/* CONCIERGE FORM */
+.concierge-form-wrap{background:rgba(26,16,53,0.02);border:1px solid rgba(201,146,46,0.18);border-radius:14px;padding:1.6rem}
+.concierge-form-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--indigo);margin-bottom:0.3rem}
+.concierge-form-sub{font-size:0.75rem;color:rgba(26,16,53,0.5);margin-bottom:1.2rem}
+.cf-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-bottom:0.8rem}
+@media(max-width:600px){.cf-grid{grid-template-columns:1fr}}
+.cf-field{display:flex;flex-direction:column;gap:0.3rem}
+.cf-field label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(26,16,53,0.5)}
+.cf-field input,.cf-field textarea,.cf-field select{background:white;border:1px solid rgba(201,146,46,0.25);border-radius:8px;padding:0.55rem 0.8rem;color:var(--indigo);font-family:'Nunito Sans',sans-serif;font-size:0.82rem;outline:none;transition:border 0.2s;width:100%;box-sizing:border-box}
+.cf-field input:focus,.cf-field textarea:focus,.cf-field select:focus{border-color:rgba(201,146,46,0.6)}
+.cf-field textarea{resize:vertical;min-height:80px}
+.cf-field select option{background:white;color:var(--indigo)}
+.cf-full{grid-column:1/-1}
+.cf-submit{margin-top:1rem;background:linear-gradient(135deg,var(--gold),#a0621a);color:var(--ivory);border:none;border-radius:8px;padding:0.7rem 2rem;font-size:0.82rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:opacity 0.2s;text-decoration:none;display:inline-block}
+.cf-submit:hover{opacity:0.88}
+
+
+
+/* Mehndi collage visual */
+.fn-visual-mehndi-collage{position:relative;overflow:hidden;padding:0;min-height:auto !important;background:white;display:block}
+.fn-visual-mehndi-collage::after{display:none}
+.mc-bg{display:block;width:100%;height:auto;opacity:1;border-radius:16px}
+.mc-tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(120,0,60,0.18) 0%,rgba(0,0,0,0.04) 40%,rgba(0,0,0,0) 100%)}
+.mc-gazebo{display:none}
+.mc-couple{display:none}
+.mc-peacock{display:none}
+.mc-text{position:absolute;top:0;left:0;right:0;padding:1.4rem 1.2rem 0;z-index:5;text-align:center;background:linear-gradient(to bottom,rgba(120,0,60,0.3) 0%,rgba(120,0,60,0.05) 60%,transparent 100%)}
+.mc-meta+.mc-text .fn-name,.mc-text .fn-name{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:600;color:#78003c;text-shadow:0 1px 8px rgba(255,255,255,0.9);letter-spacing:0.06em;margin-bottom:0.3rem}
+.mc-text .fn-sub{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:#5a0a20;text-shadow:0 1px 4px rgba(255,255,255,0.7);margin-bottom:0.2rem}
+.mc-text .fn-vibe{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:#7a3a1a;text-shadow:0 1px 3px rgba(255,255,255,0.6)}
+.mc-meta{position:absolute;top:50%;left:1rem;transform:none;display:flex;flex-direction:column;align-items:flex-start;gap:0.28rem;background:rgba(255,255,255,0.52);backdrop-filter:blur(6px);border-radius:10px;padding:0.6rem 1rem;border:1px solid rgba(255,255,255,0.6);z-index:7}
+.mc-meta span{font-size:0.68rem;color:#3a0a1a;line-height:1.4;text-align:left;white-space:nowrap}
+.mc-meta span strong{color:#78003c;margin-right:0.2rem}
+.fn-invite{width:100%;border-radius:12px;margin-bottom:1rem;display:block;cursor:zoom-in;box-shadow:0 4px 24px rgba(0,0,0,0.3)}
+.fn-meta{display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.3rem;font-size:0.84rem;color:var(--indigo);background:rgba(253,246,236,0.92);border:1px solid rgba(201,146,46,0.3);border-radius:10px;padding:0.9rem 1rem}
+.fn-meta strong{color:var(--gold);margin-right:0.3rem;font-weight:700}
+.fn-meta span{display:flex;align-items:center;gap:0.15rem}
+
+
+
+
+
+
+
+/* SECTION SHARED */
+.sec{padding:3.5rem 5vw}
+.sec-ivory{background:var(--ivory)}
+.sec-dark{background:var(--indigo)}
+.sec-warm{background:var(--ivory-warm)}
+.sec-header{text-align:center;max-width:640px;margin:0 auto 2.5rem}
+.sec-eyebrow{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.2;margin-bottom:1rem}
+.sec-title em{color:var(--gold);font-style:italic}
+.sec-desc{font-size:0.88rem;line-height:1.8;color:rgba(26,16,53,0.58)}
+.sec-dark .sec-title{color:var(--ivory)}
+.sec-dark .sec-desc{color:rgba(253,246,236,0.5)}
+.sec-dark .sec-eyebrow{color:var(--gold)}
+
+/* FUNCTION CARDS */
+.fn-card{display:grid;grid-template-columns:1fr 1fr;max-width:1100px;margin:0 auto 2.5rem;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(26,16,53,0.11)}
+.fn-card:nth-child(even){direction:rtl}
+.fn-card:nth-child(even)>*{direction:ltr}
+.fn-visual{position:relative;min-height:440px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem 2.5rem;text-align:center;overflow:hidden}
+.fn-visual::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+
+.fn-emoji{font-size:5rem;position:relative;z-index:1;margin-bottom:1.2rem;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.3))}
+.fn-name{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;color:white;position:relative;z-index:1;margin-bottom:0.4rem}
+.fn-sub{font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.7);position:relative;z-index:1}
+.fn-vibe{margin-top:1.5rem;position:relative;z-index:1;display:inline-block;background:rgba(255,255,255,0.18);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.3);border-radius:100px;padding:0.4rem 1.2rem;font-size:0.75rem;color:white;letter-spacing:0.1em}
+.fn-info{background:white;padding:3.5rem 4rem;display:flex;flex-direction:column;justify-content:center}
+.fn-tag{display:inline-block;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem}
+.fn-info h3{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:400;color:var(--indigo);margin-bottom:0.8rem;line-height:1.2}
+.fn-info p{font-size:0.87rem;line-height:1.82;color:rgba(26,16,53,0.62);margin-bottom:1.4rem}
+.outfit-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem}
+.op{background:var(--ivory-warm);border-radius:12px;padding:0.9rem 1rem;border-left:3px solid var(--gold)}
+.op .role{font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.25rem;display:block}
+.op .garment{font-family:'Cormorant Garamond',serif;font-size:0.98rem;font-weight:400;color:var(--indigo)}
+.op .detail{font-size:0.7rem;color:rgba(26,16,53,0.5);margin-top:0.12rem;line-height:1.5}
+.palette-row{display:flex;gap:0.5rem;align-items:center;margin-top:1.4rem;flex-wrap:wrap}
+.pal-label{font-size:0.66rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(26,16,53,0.38);margin-right:0.3rem}
+.chip{width:22px;height:22px;border-radius:50%;border:2px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.14);cursor:default;position:relative;transition:transform 0.15s}
+.chip:hover{transform:scale(1.2)}
+.chip::after{content:attr(data-name);position:absolute;bottom:130%;left:50%;transform:translateX(-50%);background:var(--indigo);color:white;font-size:0.6rem;padding:0.2rem 0.5rem;border-radius:4px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.15s}
+.chip:hover::after{opacity:1}
+.avoid-row{margin-top:1.1rem}
+.avoid-row .alabel{font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:#C62828;margin-bottom:0.35rem;display:block}
+.atag{display:inline-block;background:rgba(211,47,47,0.07);color:#C62828;font-size:0.68rem;padding:0.22rem 0.55rem;border-radius:6px;margin:0.18rem;border:1px solid rgba(198,40,40,0.18)}
+.comfort-note{margin-top:1.1rem;background:rgba(201,146,46,0.08);border:1px solid rgba(201,146,46,0.24);border-radius:10px;padding:0.75rem 1rem;font-size:0.76rem;line-height:1.6;color:rgba(26,16,53,0.65)}
+.comfort-note strong{color:var(--gold)}
+
+/* OUTFIT TYPES */
+.gender-tabs{display:flex;justify-content:center;gap:1rem;margin-bottom:3.5rem}
+.tab-btn{background:rgba(255,255,255,0.06);border:1px solid rgba(201,146,46,0.25);color:rgba(253,246,236,0.65);font-size:0.74rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.7rem 2rem;border-radius:100px;cursor:pointer;transition:all 0.2s;font-family:'Nunito Sans',sans-serif}
+.tab-btn.active,.tab-btn:hover{background:var(--gold);color:var(--indigo);border-color:var(--gold);font-weight:600}
+.outfits-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
+.ot-card{background:white;border:1px solid rgba(26,16,53,0.12);border-radius:16px;overflow:hidden;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 10px 30px rgba(26,16,53,0.04)}
+.ot-card:hover{transform:translateY(-4px);box-shadow:0 15px 40px rgba(26,16,53,0.08);background:white}
+.ot-gallery{display:flex;gap:2px;height:200px;overflow:hidden}
+.ot-gallery img{flex:1;width:100%;height:100%;object-fit:cover;object-position:top center;transition:flex 0.3s ease}
+.ot-gallery img:hover{flex:1.6}
+.ot-head{padding:1.5rem 1.8rem 1rem;border-bottom:1px solid rgba(26,16,53,0.08)}
+.ot-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--indigo);margin-bottom:0.25rem;font-weight:600}
+.ot-alt{font-size:0.67rem;color:rgba(26,16,53,0.48);letter-spacing:0.08em}
+.ot-body{padding:1rem 1.8rem 1.8rem}
+.ot-body p{font-size:0.82rem;line-height:1.75;color:rgba(26,16,53,0.68);margin-bottom:0.8rem}
+.ot-body p strong{color:var(--gold)}
+.bf-label{font-size:0.63rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:0.3rem}
+.bf-tags{display:flex;flex-wrap:wrap;gap:0.3rem}
+.bf-tag{font-size:0.68rem;background:rgba(201,146,46,0.08);color:var(--indigo);padding:0.18rem 0.55rem;border-radius:6px;border:1px solid rgba(201,146,46,0.22)}
+.tab-panel{display:block}
+.wardrobe-section-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--gold);text-align:center;margin:2.2rem auto 1.2rem;font-weight:600;letter-spacing:0.06em}
+
+
+
+/* SHOPPING */
+.shop-label{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem;display:block;max-width:1100px;margin-left:auto;margin-right:auto}
+.shop-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem}
+.shop-card{background:white;border:1px solid rgba(26,16,53,0.12);border-radius:12px;padding:1.1rem 1.3rem;box-shadow:0 4px 15px rgba(26,16,53,0.03)}
+.shop-card a{color:var(--gold);font-size:0.8rem;text-decoration:none;word-break:break-all}
+.shop-card a:hover{text-decoration:underline}
+.shop-card p{font-size:0.7rem;color:rgba(26,16,53,0.6);margin-top:0.35rem;line-height:1.5}
+.shop-note{max-width:1100px;margin:1.8rem auto 0;background:rgba(201,146,46,0.07);border:1px solid rgba(201,146,46,0.2);border-radius:12px;padding:1.1rem 1.5rem;font-size:0.81rem;line-height:1.7;color:rgba(26,16,53,0.7)}
+.shop-note strong{color:var(--gold)}
+.rental-row{max-width:1100px;margin:2.5rem auto 0}
+.rental-row h4{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--indigo);margin-bottom:0.9rem;font-weight:600}
+.rental-links{display:flex;flex-wrap:wrap;gap:0.6rem}
+.rental-link{font-size:0.77rem;color:var(--indigo);background:rgba(26,16,53,0.04);border:1px solid rgba(26,16,53,0.12);padding:0.32rem 0.75rem;border-radius:8px;text-decoration:none}
+.rental-link:hover{background:rgba(26,16,53,0.08)}
+
+
+
+/* FOOTER */
+footer{background:var(--indigo);text-align:center;padding:3rem 2rem;border-top:1px solid rgba(201,146,46,0.2)}
+footer .logo{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--gold-light);margin-bottom:0.5rem}
+footer p{font-size:0.77rem;color:rgba(253,246,236,0.28)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .fn-card{grid-template-columns:1fr}
+  .fn-card:nth-child(even){direction:ltr}
+  .fn-visual{min-height:260px}
+  .fn-info{padding:2rem}
+  .outfit-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+@media(prefers-reduced-motion:reduce){.mandala,.motif{animation:none}}
+
+/* MAIN TABS */
+.main-tabs-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(26, 16, 53, 0.98); /* Deep indigo for strong contrast */
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid var(--gold); /* Royal gold accent border */
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 25px rgba(26, 16, 53, 0.25);
+}
+.main-tabs-container {
+  max-width: 520px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  background: rgba(255, 255, 255, 0.08); /* Semi-transparent container */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 100px;
+  padding: 4px;
+  gap: 4px;
+}
+.main-tab-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: rgba(253, 246, 236, 0.75); /* High contrast light text */
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600; /* Bolder text for readability */
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.65rem 1rem;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.main-tab-btn.active {
+  background: var(--gold); /* Gold active button for premium look */
+  color: var(--indigo);
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(201, 146, 46, 0.3);
+}
+.main-tab-btn:hover:not(.active) {
+  color: var(--ivory);
+  background: rgba(255, 255, 255, 0.15);
+}
+.main-tab-content {
+  display: none;
+}
+.main-tab-content.active {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<!-- MAIN TABS NAVIGATION -->
+<div class="main-tabs-wrapper">
+  <div class="main-tabs-container">
+    <button class="main-tab-btn active" onclick="switchMainTab('style-guide', this)">
+      ✨ Events &amp; Style Guide
+    </button>
+    <button class="main-tab-btn" onclick="switchMainTab('clothing', this)">
+      🛍️ Clothing
+    </button>
+  </div>
+</div>
+
+<!-- TAB CONTENT 1: CLOTHING -->
+<div id="tab-clothing" class="main-tab-content">
+
+<!-- OUTFIT TYPES -->
+<section class="sec sec-ivory" id="outfits">
+  <div class="sec-header">
+    <h2 class="sec-title">Indian Outfit <em style="color:var(--gold-light)">Types Explained</em></h2>
+  </div>
+  <h3 class="wardrobe-section-title">For Women</h3>
+  <div class="tab-panel" id="tab-women">
+    <div class="outfits-grid">
+      <div class="ot-card">
+        <div class="ot-gallery">
+          <img class="lightbox-img" src="images/page2_img1.png" alt="Saree style 1">
+          <img class="lightbox-img" src="images/page2_img2.png" alt="Saree style 2">
+          <img class="lightbox-img" src="images/page2_img3.png" alt="Saree style 3">
+          <img class="lightbox-img" src="images/page2_img4.png" alt="Saree style 4">
+        </div>
+        <div class="ot-head"><div class="ot-name">Saree / Sari</div><div class="ot-alt">The timeless classic</div></div>
+        <div class="ot-body">
+          <p>A long piece of fabric (5–9 yards) draped and pleated elegantly, paired with a fitted blouse. A petticoat worn underneath provides structure and is invisible once the saree is draped. Fabrics range from silk to chiffon in countless colors.</p>
+          <p>First time? Opt for a <strong>pre-draped saree</strong> (also called readymade or pre-stitched) — the pleats are already set, making it significantly easier to wear. Watch YouTube tutorials if draping yourself.</p>
+          <span class="bf-label">Best for</span>
+          <div class="bf-tags"><span class="bf-tag">Wedding ✓✓</span><span class="bf-tag">Reception ✓✓</span><span class="bf-tag">Sangeet ✓</span></div>
+        </div>
+      </div>
+      <div class="ot-card">
+        <div class="ot-gallery">
+          <img class="lightbox-img" src="images/page2_img5.png" alt="Lehenga style 1">
+          <img class="lightbox-img" src="images/page2_img6.png" alt="Lehenga style 2">
+          <img class="lightbox-img" src="images/page2_img7.png" alt="Lehenga style 3">
+          <img class="lightbox-img" src="images/page2_img8.png" alt="Lehenga style 4">
+        </div>
+        <div class="ot-head"><div class="ot-name">Lehenga</div><div class="ot-alt">Long skirt + choli + dupatta</div></div>
+        <div class="ot-body">
+          <p>A three-piece ensemble: long flared skirt, a fitted crop top (choli), and a scarf (dupatta). Often heavily embellished. Wear the skirt higher on the waist or drape the dupatta in front for more coverage. Many ways to style — search YouTube or Pinterest for dupatta draping ideas.</p>
+          <span class="bf-label">Best for</span>
+          <div class="bf-tags"><span class="bf-tag">All Events ✓✓</span></div>
+        </div>
+      </div>
+      <div class="ot-card">
+        <div class="ot-gallery">
+          <img class="lightbox-img" src="images/page3_img1.png" alt="Anarkali style 1">
+          <img class="lightbox-img" src="images/page3_img2.png" alt="Anarkali style 2">
+          <img class="lightbox-img" src="images/page3_img3.png" alt="Anarkali style 3">
+        </div>
+        <div class="ot-head"><div class="ot-name">Anarkali Suit</div><div class="ot-alt">Long flowing dress + churidar</div></div>
+        <div class="ot-body">
+          <p>A long, flowing dress with a fitted bodice and a flared skirt, usually paired with tapered pants (churidar). Graceful, movement-friendly, and elegant. Named after the legendary Mughal courtesan Anarkali — a truly timeless silhouette.</p>
+          <span class="bf-label">Best for</span>
+          <div class="bf-tags"><span class="bf-tag">Sangeet ✓✓</span><span class="bf-tag">Wedding ✓✓</span><span class="bf-tag">Cocktail ✓</span></div>
+        </div>
+      </div>
+      <div class="ot-card">
+        <div class="ot-gallery">
+          <img class="lightbox-img" src="images/page4_img1.png" alt="Salwar Kameez style 1">
+          <img class="lightbox-img" src="images/page4_img2.png" alt="Salwar Kameez style 2">
+          <img class="lightbox-img" src="images/page4_img3.png" alt="Salwar Kameez style 3">
+          <img class="lightbox-img" src="https://assets0.mirraw.com/images/13960561/image_original_small.jpeg?1777021598" alt="Lavender Sharara Salwar Set" onerror="this.style.display='none'">
+          <img class="lightbox-img" src="https://assets0.mirraw.com/images/14030988/image_original_small.jpeg?1779079611" alt="Maroon Sharara Salwar Set" onerror="this.style.display='none'">
+        </div>
+        <div class="ot-head"><div class="ot-name">Salwar Kameez</div><div class="ot-alt">Tunic + loose pants + dupatta</div></div>
+        <div class="ot-body">
+          <p>A comfortable outfit with a tunic (kameez) and loose pants (salwar), paired with a dupatta. Slightly more casual than a saree or lehenga — but still beautiful and festive. Pants come as wide-legged <strong>palazzo</strong> or flared-from-the-knee <strong>sharara</strong>.</p>
+          <span class="bf-label">Best for</span>
+          <div class="bf-tags"><span class="bf-tag">Sangeet ✓✓</span><span class="bf-tag">Cocktail ✓</span></div>
+        </div>
+      </div>
+      <div class="ot-card">
+        <div class="ot-gallery">
+          <img class="lightbox-img" src="images/page5_img1.png" alt="Indo-Western style 1">
+          <img class="lightbox-img" src="images/page5_img2.png" alt="Indo-Western style 2">
+          <img class="lightbox-img" src="images/page5_img3.png" alt="Indo-Western style 3">
+        </div>
+        <div class="ot-head"><div class="ot-name">Indo-Western</div><div class="ot-alt">The fusion option</div></div>
+        <div class="ot-body">
+          <p>A fusion of Western and Indian fashion — combining Western silhouettes with Indian ethnic details. Includes tunics with trousers, jumpsuits, cape sets, two-piece sets, and embroidered dresses. Perfect for guests who want a modern look while honoring the spirit of the celebration.</p>
+          <span class="bf-label">Best for</span>
+          <div class="bf-tags"><span class="bf-tag">All Events ✓✓</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="wardrobe-section-title">For Men</h3>
+  <div class="tab-panel" id="tab-men">
+    <div class="outfits-grid">
+      <div class="ot-card">
+        <div class="ot-gallery">
+          <img class="lightbox-img" src="images/page5_img5.png" alt="Kurta Pajama style 1">
+          <img class="lightbox-img" src="images/page5_img6.png" alt="Kurta Pajama style 2">
+          <img class="lightbox-img" src="images/page5_img7.png" alt="Kurta Pajama style 3">
+          <img class="lightbox-img" src="images/page5_img8.png" alt="Kurta Pajama style 4">
+        </div>
+        <div class="ot-head"><div class="ot-name">Kurta Pajama</div><div class="ot-alt">The classic go-to</div></div>
+        <div class="ot-body">
+          <p>A kurta (long tunic) worn with matching pants (pajama). Popular, comfortable, and versatile. Can be plain or embroidered for a festive look. Elevate easily with a stylish stole or scarf draped over one shoulder. Pair with loafers, dress shoes, or jutti.</p>
+          <span class="bf-label">Best for</span>
+          <div class="bf-tags"><span class="bf-tag">Sangeet ✓✓</span><span class="bf-tag">Wedding ✓✓</span><span class="bf-tag">Cocktail ✓</span></div>
+        </div>
+      </div>
+      <div class="ot-card">
+        <div class="ot-gallery">
+          <img class="lightbox-img" src="images/page6_img1.png" alt="Nehru Jacket style 1">
+          <img class="lightbox-img" src="images/page6_img2.png" alt="Nehru Jacket style 2">
+          <img class="lightbox-img" src="images/page6_img3.png" alt="Nehru Jacket style 3">
+          <img class="lightbox-img" src="images/page6_img4.png" alt="Nehru Jacket style 4">
+        </div>
+        <div class="ot-head"><div class="ot-name">Nehru Jacket Set</div><div class="ot-alt">Kurta + sleeveless vest</div></div>
+        <div class="ot-body">
+          <p>The Nehru jacket is the sleeveless vest worn on top of a kurta — it adds instant formality and polish to any look. Pair with trousers or churidar. One of the most versatile options for male guests across multiple events.</p>
+          <span class="bf-label">Best for</span>
+          <div class="bf-tags"><span class="bf-tag">Sangeet ✓✓</span><span class="bf-tag">Wedding ✓✓</span><span class="bf-tag">Cocktail ✓✓</span></div>
+        </div>
+      </div>
+      <div class="ot-card">
+        <div class="ot-gallery">
+          <img class="lightbox-img" src="images/page7_img1.png" alt="Jodhpuri Bandhgala style 1">
+          <img class="lightbox-img" src="images/page7_img2.png" alt="Jodhpuri Bandhgala style 2">
+          <img class="lightbox-img" src="images/page7_img3.png" alt="Jodhpuri Bandhgala style 3">
+          <img class="lightbox-img" src="images/page7_img4.png" alt="Jodhpuri Bandhgala style 4">
+          <img class="lightbox-img" src="images/page7_img5.png" alt="Jodhpuri Bandhgala style 5">
+        </div>
+        <div class="ot-head"><div class="ot-name">Jodhpuri / Bandhgala</div><div class="ot-alt">The structured jacket</div></div>
+        <div class="ot-body">
+          <p>A jacket with a high collar and fitted silhouette — formal or semi-formal. Made from rich fabrics like silk, velvet, or brocade, often with intricate embroidery or decorative buttons. Paired with tailored trousers in a matching or complementary color for a polished look.</p>
+          <span class="bf-label">Best for</span>
+          <div class="bf-tags"><span class="bf-tag">Sangeet ✓✓</span><span class="bf-tag">Wedding ✓✓</span><span class="bf-tag">Cocktail ✓✓</span><span class="bf-tag">Reception ✓</span></div>
+        </div>
+      </div>
+      <div class="ot-card">
+        <div class="ot-gallery">
+          <img class="lightbox-img" src="images/page8_img1.png" alt="Sherwani style 1">
+          <img class="lightbox-img" src="images/page8_img2.png" alt="Sherwani style 2">
+          <img class="lightbox-img" src="images/page8_img3.png" alt="Sherwani style 3">
+          <img class="lightbox-img" src="images/page8_img4.png" alt="Sherwani style 4">
+        </div>
+        <div class="ot-head"><div class="ot-name">Sherwani</div><div class="ot-alt">The most formal</div></div>
+        <div class="ot-body">
+          <p>A long coat-like garment worn over a kurta and churidar — the most formal of all men's Indian wear. Traditionally the groom's attire, but close family members and wedding party guests often also wear one to complement the groom's look.</p>
+          <span class="bf-label">Best for</span>
+          <div class="bf-tags"><span class="bf-tag">Reception ✓✓</span><span class="bf-tag">Wedding Party</span><span class="bf-tag">Close Family</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCIERGE -->
+<section class="sec sec-ivory" id="concierge">
+  <div class="sec-header">
+    <span class="sec-eyebrow">✦ Exclusive Service</span>
+    <h2 class="sec-title">Personalized <em>Styling Concierge</em></h2>
+    <p class="sec-desc">Our family has arranged a personalized concierge service to make dressing up truly effortless — from outfit selection to measurements to delivery at the venue.</p>
+  </div>
+  <!-- CONCIERGE SECTION -->
+  <div class="concierge-banner">
+    
+    
+    
+    <div class="advisor-row">
+      <div class="advisor-card">
+        <img src="images/sunanda.jpg" alt="Sunanda Gitai" class="advisor-photo lightbox-img">
+        <div class="advisor-info">
+          <div class="advisor-name">Sunanda Gitai</div>
+          <div class="advisor-role">Lead Stylist &amp; Concierge</div>
+          <div class="advisor-contact">
+            📞 <a href="tel:+918290216993">+91 82902 16993</a><br>
+            ✉ <a href="mailto:sunanda@gitai.com">sunanda@gitai.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="advisor-card">
+        <img src="images/mahima_gupta.jpeg" alt="Mahima Gupta" class="advisor-photo lightbox-img">
+        <div class="advisor-info">
+          <div class="advisor-name">Mahima Gupta</div>
+          <div class="advisor-role">Stylist &amp; Coordinator</div>
+          <div class="advisor-contact">
+            📞 <a href="tel:+919910340446">+91 99103 40446</a><br>
+            ✉ <a href="mailto:mahima28@gmail.com">mahima28@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="concierge-form-wrap">
+      <div class="concierge-form-title">Express Your Interest</div>
+      <div class="concierge-form-sub">Fill in your details and our stylists will reach out to get you looking your best!</div>
+      <form action="mailto:priyakijit@gitai.com" method="GET" enctype="text/plain" id="conciergeForm">
+        <div class="cf-grid">
+          <div class="cf-field">
+            <label>Your Name *</label>
+            <input type="text" name="name" placeholder="Full name" required>
+          </div>
+          <div class="cf-field">
+            <label>Email *</label>
+            <input type="email" name="email" placeholder="your@email.com" required>
+          </div>
+          <div class="cf-field">
+            <label>Phone / WhatsApp</label>
+            <input type="tel" name="phone" placeholder="+1 555 000 0000">
+          </div>
+          <div class="cf-field">
+            <label>Which events are you attending?</label>
+            <select name="events">
+              <option value="">Select events…</option>
+              <option value="All Events">All Events</option>
+              <option value="Cocktail Night">Cocktail Night</option>
+              <option value="Mehendi">Mehendi</option>
+              <option value="Sangeet">Sangeet</option>
+              <option value="Wedding Ceremony">Wedding Ceremony</option>
+              <option value="Reception">Reception</option>
+            </select>
+          </div>
+          <div class="cf-field cf-full">
+            <label>Brief requirements &amp; preferences</label>
+            <textarea name="requirements" placeholder="e.g. Prefer saree for the ceremony, comfortable outfit for sangeet, budget range, any color preferences…"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="cf-submit" onclick="handleForm(event)">Send to Stylists →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- SHOPPING -->
+<section class="sec sec-ivory" id="shopping">
+  <div class="sec-header">
+    <span class="sec-eyebrow">Where to Shop</span>
+    <h2 class="sec-title">Online Retailers</h2>
+    <p class="sec-desc">Personally recommended sources from real experience and friends'/family's recommendations. Items priced over $100 are generally excellent quality; below that price point can be hit or miss. Always review delivery and shipping times before ordering.</p>
+  </div>
+
+
+
+
+
+    <span class="shop-label">🛍 Online Retailers (Personally Recommended)</span>
+  <div class="shop-grid">
+    <div class="shop-card"><a href="https://www.houseofindya.com" target="_blank">houseofindya.com</a><p>Contemporary Indian fashion</p></div>
+    <div class="shop-card"><a href="https://www.utsavfashion.com" target="_blank">utsavfashion.com</a><p>Broad collection, varied budgets</p></div>
+    <div class="shop-card"><a href="https://www.kalkifashion.com" target="_blank">kalkifashion.com</a><p>Lehengas, sarees, and more</p></div>
+    <div class="shop-card"><a href="https://oneminutesaree.com" target="_blank">oneminutesaree.com</a><p>Specializes in pre-draped sarees</p></div>
+    <div class="shop-card"><a href="https://www.perniaspopupshop.com" target="_blank">perniaspopupshop.com</a><p>Designer pieces — premium quality</p></div>
+  </div>
+
+  <div class="shop-note">
+    <strong>🏪 In-Person Shopping (NYC/NJ):</strong> Manyavar, Iselin NJ.
+  </div>
+</section>
+
+</div> <!-- END OF TAB CONTENT 1: CLOTHING -->
+
+
+<!-- TAB CONTENT 2: EVENTS & STYLE GUIDE -->
+<div id="tab-style-guide" class="main-tab-content active">
+
+<!-- FUNCTIONS -->
+<section class="sec sec-ivory" id="functions">
+
+  <!-- COCKTAIL -->
+  <div class="fn-card fn-mehndi">
+    <div class="fn-visual fn-visual-mehndi-collage">
+      <img src="images/mehndi.png" class="mc-bg" alt="Mehndi Invitation">
+    </div>
+    <div class="fn-info">
+      <span class="fn-tag">Mehndi</span>
+      <div class="fn-meta">
+        <span><strong>📅</strong> 9 October | 6:00 PM Onwards</span>
+        <span><strong>📍</strong> Nazaara</span>
+        <span><strong>🎨</strong> Theme: Royal Rajasthan</span>
+        <span><strong>🔥</strong> After Party: Bonfire with whisky &amp; s'mores</span>
+      </div>
+      <h3>Indian or Western Semiformal</h3>
+      <p>An evening sundowner with sweeping fort views, henna, music, and a bonfire. Dress is semiformal and elegant. Warm Rajasthani tones (ochres, pinks, terracottas, and jewel hues) suit the theme beautifully.</p>
+      <div class="outfit-grid">
+        <div class="op"><span class="role">Women — Indian</span><div class="garment">Lehenga · Anarkali · Salwar Kameez</div></div>
+        <div class="op"><span class="role">Women — Western</span><div class="garment">Semiformal Dress</div></div>
+        <div class="op"><span class="role">Men — Indian</span><div class="garment">Kurta Pajama · Nehru Jacket Set</div></div>
+        <div class="op"><span class="role">Men — Western</span><div class="garment">Smart Casual or Blazer</div></div>
+      </div>
+      <div class="palette-row">
+        <span class="pal-label">Colors</span>
+        <div class="chip" style="background:#C9922E" data-name="Ochre Gold"></div>
+        <div class="chip" style="background:#AD1457" data-name="Deep Pink"></div>
+        <div class="chip" style="background:#BF360C" data-name="Terracotta"></div>
+        <div class="chip" style="background:#4A148C" data-name="Regal Purple"></div>
+        <div class="chip" style="background:#1B5E20" data-name="Forest Green"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HALDI -->
+  <div class="fn-card fn-haldi">
+    <div class="fn-visual fn-visual-mehndi-collage">
+      <img src="images/haldi.png" class="mc-bg" alt="Haldi Invitation">
+    </div>
+    <div class="fn-info">
+      <span class="fn-tag">Haldi</span>
+      <div class="fn-meta">
+        <span><strong>📅</strong> 10 October | 11:00 AM Onwards</span>
+        <span><strong>📍</strong> Haveli</span>
+        <span><strong>🎨</strong> Theme: Spanish Coast</span>
+      </div>
+      <h3>Yellows, Whites & Pastels</h3>
+      <p>A vibrant turmeric ceremony. Turmeric stains, so wear yellows, whites, or pastels in breezy fabrics that you don't mind getting messy. Leave delicate embroidery for another evening.</p>
+      <div class="outfit-grid">
+        <div class="op"><span class="role">Women — Indian</span><div class="garment">Simple Salwar Kameez · Casual Kurta Set</div></div>
+        <div class="op"><span class="role">Women — Western</span><div class="garment">Casual Sundress or Linen Set</div></div>
+        <div class="op"><span class="role">Men — Indian</span><div class="garment">Simple Kurta &amp; Pyjama</div></div>
+        <div class="op"><span class="role">Men — Western</span><div class="garment">Casual Shirt &amp; Trousers</div></div>
+      </div>
+      <div class="palette-row">
+        <span class="pal-label">Colors</span>
+        <div class="chip" style="background:#FDD835" data-name="Sunshine Yellow"></div>
+        <div class="chip" style="background:#FFFFFF;border:1px solid rgba(255,255,255,0.3)" data-name="White"></div>
+        <div class="chip" style="background:#F8BBD9" data-name="Blush Pink"></div>
+        <div class="chip" style="background:#B2EBF2" data-name="Pastel Blue"></div>
+        <div class="chip" style="background:#DCEDC8" data-name="Mint Green"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SANGEET -->
+  <div class="fn-card fn-sangeet">
+    <div class="fn-visual fn-visual-mehndi-collage">
+      <img src="images/sangeet.png" class="mc-bg" alt="Sangeet Invitation">
+    </div>
+    <div class="fn-info">
+      <span class="fn-tag">Sangeet</span>
+      <div class="fn-meta">
+        <span><strong>📅</strong> 10 October | 07:00 PM Onwards</span>
+        <span><strong>📍</strong> Aravalli Lawn &amp; Dera</span>
+        <span><strong>🎨</strong> Theme: A Night at the Movies</span>
+        <span><strong>🎰</strong> After Party: Casino Night</span>
+      </div>
+      <h3>Indian or Cocktail Attire</h3>
+      <p>A movie-themed Sangeet night followed by a casino speakeasy. Choose Indian or cocktail attire that allows you to dance freely. An Anarkali or Salwar Kameez is recommended for movement; a saree is welcome but may limit dancing.</p>
+      <div class="outfit-grid">
+        <div class="op"><span class="role">Women — Best Picks</span><div class="garment">Salwar Kameez · Anarkali</div></div>
+        <div class="op"><span class="role">Women — Also Works</span><div class="garment">Lehenga · Indo-Western · Saree</div></div>
+        <div class="op"><span class="role">Men — Indian</span><div class="garment">Kurta Pajama · Nehru Jacket Set · Jodhpuri</div></div>
+        <div class="op"><span class="role">Men — Western</span><div class="garment">Suit or Smart Casual</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEDDING -->
+  <div class="fn-card fn-ceremony">
+    <div class="fn-visual fn-visual-mehndi-collage">
+      <img src="images/wedding.png" class="mc-bg" alt="Wedding Invitation">
+    </div>
+    <div class="fn-info">
+      <span class="fn-tag">Wedding</span>
+      <div class="fn-meta">
+        <span><strong>📅</strong> 11 October | 2:00 PM Onwards</span>
+        <span><strong>📍</strong> Bawri, Alila Fort</span>
+        <span><strong>🎨</strong> Theme: Ancient India</span>
+        <span><strong>💃</strong> After Party: Reception &amp; all-night dancing</span>
+      </div>
+      <h3>Sacred Ceremony</h3>
+      <p>The heart of the wedding and a deeply sacred ritual. A saree is particularly fitting and elegant. For men, a Kurta Pajama, Nehru Jacket, or Jodhpuri/Bandhgala works beautifully. Sherwanis are best suited for close family and the wedding party.</p>
+      <div class="outfit-grid">
+        <div class="op"><span class="role">Women — Indian</span><div class="garment">Saree · Lehenga · Anarkali</div></div>
+        <div class="op"><span class="role">Women — Western</span><div class="garment">Formal Dress or Gown</div></div>
+        <div class="op"><span class="role">Men — Indian</span><div class="garment">Sherwani · Kurta Pajama · Nehru Jacket · Jodhpuri</div></div>
+        <div class="op"><span class="role">Men — Western</span><div class="garment">Formal Suit</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div> <!-- END OF TAB CONTENT 2: EVENTS & STYLE GUIDE -->
+
+
+
+<!-- LIGHTBOX OVERLAY -->
+<div class="lightbox-overlay" id="lightboxOverlay">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+
+<script>
+
+// Concierge form — compose mailto
+function handleForm(e) {
+  e.preventDefault();
+  const f = document.getElementById('conciergeForm');
+  const name = f.querySelector('[name="name"]').value.trim();
+  const email = f.querySelector('[name="email"]').value.trim();
+  const phone = f.querySelector('[name="phone"]').value.trim();
+  const events = f.querySelector('[name="events"]').value;
+  const reqs = f.querySelector('[name="requirements"]').value.trim();
+  if (!name || !email) { alert('Please fill in your name and email.'); return; }
+  const subject = encodeURIComponent('#PriyaKiJit — Priyanka &amp; Satyajit — Styling Request from ' + name);
+  const body = encodeURIComponent(
+    'Name: ' + name + '\n' +
+    'Email: ' + email + '\n' +
+    'Phone/WhatsApp: ' + (phone || 'Not provided') + '\n' +
+    'Events attending: ' + (events || 'Not specified') + '\n\n' +
+    'Requirements & preferences:\n' + (reqs || 'None provided') + '\n\n' +
+    '— Sent from #PriyaKiJit — Priyanka &amp; Satyajit Wedding Guide'
+  );
+  window.location.href = 'mailto:priyakijit@gitai.com?subject=' + subject + '&body=' + body;
+}
+
+
+
+// LIGHTBOX
+(function(){
+  const overlay = document.getElementById('lightboxOverlay');
+  const overlayImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+
+  function openLightbox(src, alt) {
+    overlayImg.src = src;
+    overlayImg.alt = alt || '';
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    overlay.classList.remove('open');
+    overlayImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.lightbox-img').forEach(img => {
+    img.addEventListener('click', () => openLightbox(img.src, img.alt));
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+})();
+
+// MAIN TAB SYSTEM
+function switchMainTab(tabId, btn) {
+  // Update main tab buttons active status
+  document.querySelectorAll('.main-tab-btn').forEach(b => b.classList.remove('active'));
+  if (btn) {
+    btn.classList.add('active');
+  } else {
+    const targetBtn = document.querySelector(`.main-tab-btn[onclick*="${tabId}"]`);
+    if (targetBtn) targetBtn.classList.add('active');
+  }
+  
+  // Hide all main tab contents and show active one
+  document.querySelectorAll('.main-tab-content').forEach(p => p.classList.remove('active'));
+  const activePanel = document.getElementById('tab-' + tabId);
+  if (activePanel) {
+    activePanel.classList.add('active');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Handle URL hash on initial load
+  const hash = window.location.hash;
+  if (hash) {
+    const targetElement = document.querySelector(hash);
+    if (targetElement) {
+      const parentTabContent = targetElement.closest('.main-tab-content');
+      if (parentTabContent) {
+        const tabId = parentTabContent.id.replace('tab-', '');
+        switchMainTab(tabId);
+        setTimeout(() => {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>
