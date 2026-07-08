@@ -206,7 +206,7 @@ footer p{font-size:0.77rem;color:rgba(253,246,236,0.28)}
   box-shadow: 0 4px 25px rgba(26, 16, 53, 0.25);
 }
 .main-tabs-container {
-  max-width: 520px;
+  max-width: 720px;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -382,6 +382,15 @@ footer p{font-size:0.77rem;color:rgba(253,246,236,0.28)}
   .overview-box {
     padding: 1.8rem 1.5rem;
   }
+  .main-tabs-container {
+    border-radius: 12px;
+  }
+  .main-tab-btn {
+    font-size: 0.72rem;
+    padding: 0.5rem 0.5rem;
+    gap: 0.2rem;
+    letter-spacing: 0.05em;
+  }
 }
 </style>
 </head>
@@ -420,91 +429,16 @@ footer p{font-size:0.77rem;color:rgba(253,246,236,0.28)}
       ✨ Events &amp; Style Guide
     </button>
     <button class="main-tab-btn" onclick="switchMainTab('clothing', this)">
-      🛍️ Clothing
+      👗 Clothing Types
+    </button>
+    <button class="main-tab-btn" onclick="switchMainTab('contacts', this)">
+      📞 Helpful Contacts
     </button>
   </div>
 </div>
 
 <!-- TAB CONTENT 1: CLOTHING -->
 <div id="tab-clothing" class="main-tab-content">
-
-<!-- CONCIERGE -->
-<section class="sec sec-ivory" id="concierge">
-  <div class="sec-header">
-    <h2 class="sec-title">Personalized <em>Styling Concierge</em></h2>
-<p>Two of the most experienced shoppers in our family, <strong>Sunanda Gitai</strong> and <strong>Mahima Gupta</strong>, have graciously offered to coordinate an end-to-end shopping experience for anyone who has interest. The clothes would be selected by you remotely, made to your measurements in local shops, and delivered to the venue before you arrive. <strong>Do fill out the form below!</strong></p>
-
-<p>Please feel free to direct any other questions about clothes to Sunanda and Mahima even if you’re shopping independently (&ldquo;is this outfit I already have appropriate for xyz event&rdquo;, &ldquo;does this count as formal or casual&rdquo;, &ldquo;what is a petticoat&rdquo;, etc.) &mdash; they are more than happy to help!!</p>
-  </div>
-  <!-- CONCIERGE SECTION -->
-  <div class="concierge-banner">
-    
-    
-    
-    <div class="advisor-row">
-      <div class="advisor-card">
-        <img src="images/sunanda.jpg" alt="Sunanda Gitai" class="advisor-photo lightbox-img">
-        <div class="advisor-info">
-          <div class="advisor-name">Sunanda Gitai</div>
-          <div class="advisor-role">Lead Stylist &amp; Concierge</div>
-          <div class="advisor-contact">
-            📞 <a href="tel:+918290216993">+91 82902 16993</a><br>
-            ✉ <a href="mailto:sunanda@gitai.com">sunanda@gitai.com</a>
-          </div>
-        </div>
-      </div>
-      <div class="advisor-card">
-        <img src="images/mahima_gupta.jpeg" alt="Mahima Gupta" class="advisor-photo lightbox-img">
-        <div class="advisor-info">
-          <div class="advisor-name">Mahima Gupta</div>
-          <div class="advisor-role">Stylist &amp; Coordinator</div>
-          <div class="advisor-contact">
-            📞 <a href="tel:+919910340446">+91 99103 40446</a><br>
-            ✉ <a href="mailto:mahima28@gmail.com">mahima28@gmail.com</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="concierge-form-wrap">
-      <div class="concierge-form-title">Express Your Interest</div>
-      <div class="concierge-form-sub">Fill in your details and our stylists will reach out to get you looking your best!</div>
-      <form action="mailto:priyakijit@gitai.com" method="GET" enctype="text/plain" id="conciergeForm">
-        <div class="cf-grid">
-          <div class="cf-field">
-            <label>Your Name *</label>
-            <input type="text" name="name" placeholder="Full name" required>
-          </div>
-          <div class="cf-field">
-            <label>Email *</label>
-            <input type="email" name="email" placeholder="your@email.com" required>
-          </div>
-          <div class="cf-field">
-            <label>Phone / WhatsApp</label>
-            <input type="tel" name="phone" placeholder="+1 555 000 0000">
-          </div>
-          <div class="cf-field">
-            <label>Which events are you attending?</label>
-            <select name="events">
-              <option value="">Select events…</option>
-              <option value="All Events">All Events</option>
-              <option value="Mehendi">Mehendi</option>
-              <option value="Sangeet">Sangeet</option>
-              <option value="Wedding Ceremony">Wedding Ceremony</option>
-              <option value="Reception">Reception</option>
-            </select>
-          </div>
-          <div class="cf-field cf-full">
-            <label>Brief requirements &amp; preferences</label>
-            <textarea name="requirements" placeholder="e.g. Prefer saree for the ceremony, comfortable outfit for sangeet, budget range, any color preferences…"></textarea>
-          </div>
-        </div>
-        <button type="submit" class="cf-submit" onclick="handleForm(event)">Send to Stylists →</button>
-      </form>
-    </div>
-  </div>
-</section>
-
 
 <!-- OUTFIT TYPES -->
 <section class="sec sec-ivory" id="outfits">
@@ -759,6 +693,84 @@ footer p{font-size:0.77rem;color:rgba(253,246,236,0.28)}
 </section>
 
 </div> <!-- END OF TAB CONTENT 2: EVENTS & STYLE GUIDE -->
+
+
+<!-- TAB CONTENT 3: HELPFUL CONTACTS -->
+<div id="tab-contacts" class="main-tab-content">
+
+<!-- CONCIERGE -->
+<section class="sec sec-ivory" id="concierge">
+  <div class="sec-header">
+    <h2 class="sec-title">Personalized <em>Styling Concierge</em></h2>
+    <p class="sec-desc">Two of the most experienced shoppers in our family, <strong>Sunanda Gitai</strong> and <strong>Mahima Gupta</strong>, have graciously offered to coordinate an end-to-end shopping experience for anyone who has interest. The clothes would be selected by you remotely, made to your measurements in local shops, and delivered to the venue before you arrive. <strong>Do fill out the form below!</strong></p>
+    <p class="sec-desc" style="margin-top: 1rem;">Please feel free to direct any other questions about clothes to Sunanda and Mahima even if you’re shopping independently (“is this outfit I already have appropriate for xyz event”, “does this count as formal or casual”, “what is a petticoat”, etc.) — they are more than happy to help!!</p>
+  </div>
+  <!-- CONCIERGE SECTION -->
+  <div class="concierge-banner">
+    <div class="advisor-row">
+      <div class="advisor-card">
+        <img src="images/sunanda.jpg" alt="Sunanda Gitai" class="advisor-photo lightbox-img">
+        <div class="advisor-info">
+          <div class="advisor-name">Sunanda Gitai</div>
+          <div class="advisor-role">Lead Stylist &amp; Concierge</div>
+          <div class="advisor-contact">
+            📞 <a href="tel:+918290216993">+91 82902 16993</a><br>
+            ✉ <a href="mailto:sunanda@gitai.com">sunanda@gitai.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="advisor-card">
+        <img src="images/mahima_gupta.jpeg" alt="Mahima Gupta" class="advisor-photo lightbox-img">
+        <div class="advisor-info">
+          <div class="advisor-name">Mahima Gupta</div>
+          <div class="advisor-role">Stylist &amp; Coordinator</div>
+          <div class="advisor-contact">
+            📞 <a href="tel:+919910340446">+91 99103 40446</a><br>
+            ✉ <a href="mailto:mahima28@gmail.com">mahima28@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="concierge-form-wrap">
+      <div class="concierge-form-title">Express Your Interest</div>
+      <div class="concierge-form-sub">Fill in your details and our stylists will reach out to get you looking your best!</div>
+      <form action="mailto:priyakijit@gitai.com" method="GET" enctype="text/plain" id="conciergeForm">
+        <div class="cf-grid">
+          <div class="cf-field">
+            <label>Your Name *</label>
+            <input type="text" name="name" placeholder="Full name" required>
+          </div>
+          <div class="cf-field">
+            <label>Email *</label>
+            <input type="email" name="email" placeholder="your@email.com" required>
+          </div>
+          <div class="cf-field">
+            <label>Phone / WhatsApp</label>
+            <input type="tel" name="phone" placeholder="+1 555 000 0000">
+          </div>
+          <div class="cf-field">
+            <label>Which events are you attending?</label>
+            <select name="events">
+              <option value="">Select events…</option>
+              <option value="All Events">All Events</option>
+              <option value="Mehendi">Mehendi</option>
+              <option value="Sangeet">Sangeet</option>
+              <option value="Wedding Ceremony">Wedding Ceremony</option>
+              <option value="Reception">Reception</option>
+            </select>
+          </div>
+          <div class="cf-field cf-full">
+            <label>Brief requirements &amp; preferences</label>
+            <textarea name="requirements" placeholder="e.g. Prefer saree for the ceremony, comfortable outfit for sangeet, budget range, any color preferences…"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="cf-submit" onclick="handleForm(event)">Send to Stylists →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
 
 
 
